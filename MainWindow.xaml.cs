@@ -264,7 +264,11 @@ namespace BBBuilder_gui
 
         private void On_Build_Run_Click(object sender, RoutedEventArgs e)
         {
+            Utils.Stopwatch.Reset();
+            Utils.Stopwatch.Start();
+            Utils.LastTime = 0;
             BuildCommand = new BuildCommand();
+
             if (BuildFolder.Text.Length == 0)
             {
                 Console.WriteLine("Path to the mod to build mustn't be empty!");
