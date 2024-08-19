@@ -80,6 +80,7 @@ namespace BBBuilder_gui
                 Console.WriteLine("DataPath and ModsPath musn't be empty!");
                 return;
             }
+            ConfigCommand = new ConfigCommand();
             var c = ConfigCommand;
             List<string> commands = new List<string> { c.Name };
             commands.AddRange(new List<string> { c.DataPath.Flag, DataPath.Text });
@@ -178,6 +179,7 @@ namespace BBBuilder_gui
 
         private void On_Init_Run_Click(object sender, RoutedEventArgs e)
         {
+            InitCommand = new InitCommand();
             OutputWriter.Clear();
             if (InitModName.Text.Length == 0)
             {
@@ -226,6 +228,7 @@ namespace BBBuilder_gui
 
         private void On_Extract_Run_Click(object sender, RoutedEventArgs e)
         {
+            ExtractCommand = new ExtractCommand();
             OutputWriter.Clear();
             if (ExtractZip.Text.Length == 0)
             {
